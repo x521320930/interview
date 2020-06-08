@@ -3652,115 +3652,27 @@
     // console.log(fomatCtiy(city.areaMap))
     // console.timeEnd('time')
 
-    const data = {
-					// "contactInfo": {
-					// 	"contact1": {
-					// 		"contactId": "98899030497",
-					// 		"mobile": "15780779466",
-					// 		"name": "明年",
-					// 		"relation": "F",
-					// 		"relationLevel": "1"
-					// 	},
-					// 	"contact2": {
-					// 		"contactId": "98899030498",
-					// 		"mobile": "15780646648",
-					// 		"name": "巩固",
-					// 		"relation": "M",
-					// 		"relationLevel": "1"
-					// 	},
-					// 	"relative": {
-					// 		"contactId": "98899019631",
-					// 		"mobile": "13811606464",
-					// 		"name": "国美梁凯峰",
-					// 		"relation": "M",
-					// 		"relationLevel": "2"
-					// 	}
-					// },
-					// "occupationInfo": {
-					// 	"addressInfo": {
-					// 		"addressId": "9119419541",
-					// 		"city0Code": "110000",
-					// 		"city0Name": "北京市",
-					// 		"city1Code": "110100",
-					// 		"city1Name": "北京市市辖区",
-					// 		"city2Code": "110105",
-					// 		"city2Name": "朝阳区",
-					// 		"detail": "霄云路26号",
-					// 		"type": 1
-					// 	},
-					// 	"employType": "F",
-					// 	"employer": "国美",
-					// 	"employerType": "P",
-					// 	"industry": "N",
-					// 	"occupationId": "7828174"
-					// },
-					"personalInfo": {
-						"education": "master",
-						"email": "osmic566@jsjj.xnj",
-						"hjType": "2",
-						"isStudent": "0",
-						"maritalStatus": "0",
-						"maskedName": "丁婷*"
-					},
-					"residentInfo": {
-						"addressInfo": {
-						"addressId": "9119419540",
-						"city0Code": "110000",
-						"city0Name": "北京市",
-						"city1Code": "110100",
-						"city1Name": "北京市市辖区",
-						"city2Code": "110105",
-						"city2Name": "朝阳区",
-						"detail": "霄云路26号鹏润大厦",
-						"type": 2
-						},
-						"houseType": "3"
-					},
-					"resultCode": "1000",
-					"resultMsg": "成功",
-					"status": "1000",
-					"traceNo": "gmcfgwc0a2a00e3442013529"
-				};
-        const touList = [
-				{
-					label: "个人",
-					type: 1,
-					key: "personalInfo"
-				},
-				{
-					label: "居住",
-					type: 0,
-					key: "residentInfo"
-				},
-				{
-					label: "单位",
-					type: 0,
-					key: "occupationInfo"
-				},
-				{
-					label: "联系人",
-					type: 0,
-					key: "contactInfo"
-				}
-			]
-      let isType = false
-      const arr = touList.filter((n, i) => {
-        const isNull = data[n.key] == null || data[n.key] == undefined || data[n.key] == ""
-        // const index = i - 1 < 0 ? 0 : i - 1
-        if (isNull) {
-          if (!isType) {
-            n.type = 1
-            isType = true
-          }
-          return n
+
+    const Singleton = function (name) {
+      this.name = name
+    }
+
+    Singleton.prototype.getName = function () {
+      return this.name
+    }
+    // 代理单利模式
+    const ProxySingletonInstance = (function (name) {
+      let instance = null
+      return function (name) {
+        if (!instance) {
+          instance = new Singleton(name)
         }
-        // if (isNull && ( i === 0 || n[index].type ===  )) {
-        //   n.type = 1
-        //   return n
-        // }
-      })
-
-
-      console.log(arr);
+        return instance
+      }
+    })()
+    const a = new ProxySingletonInstance('sven1')
+    const b = new ProxySingletonInstance('sven2')
+    
+    console.log(a === b)
   </script>
 </html>
