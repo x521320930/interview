@@ -1,17 +1,72 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <style>
-      input {
-        display: inline-block;
-        height: 500px;
-        width: 500px;
-      }
-    </style>
-  </head>
+  <head> </head>
   <body>
-    <input type="text" id="input" />
+    <div
+      class="outer"
+      style="width: 200px; height: 200px; background-color: #ccc;"
+    >
+      1
+      <div
+        class="inner"
+        style="width: 100px; height: 100px; background-color: #ddd;"
+      >
+        begin
+      </div>
+    </div>
   </body>
+  <script>
+    var _0x112b = ["push", "join", "error", "columnNumber", "srcElement", "DOCUMENT_TYPE_NODE", "nodeName", "statusText", "ifReportHttpTimout", "number", "prototype", "getTime", "setHttpBody", "parse", "silentWebsocket", "message", "notify", "addEventListener", "apply", "href", "getAttribute", "notifierUrl", "call", "toStringTag", "__esModule", "unhandledrejection", "2.4.0", "metaData", "target", "atob", "setRequestHeader", "Content-Type", "Fundebug: 请配置apikey", "pop"];
+    var _0x580e = function (e, t) {
+      console.log(e -= 0)
+      return _0x112b[e -= 0]
+    };
+    // _0x580e("0x3")
+    var e = "0x3"
+    console.log(_0x112b[ e - 0])
+  </script>
+  <!-- 检测事件循环 机制 -->
+  <!-- <script>
+    var outer = document.querySelector(".outer");
+    var inner = document.querySelector(".inner");
+
+    var i = 0;
+
+    // Let's listen for attribute changes on the
+    // outer element
+    new MutationObserver(function () {
+      console.log("mutate");
+    }).observe(outer, {
+      attributes: true,
+    });
+
+    // Here's a click listener…
+    function onClick() {
+      i++;
+
+      if (i === 1) {
+        inner.innerHTML = "end";
+      }
+
+      console.log("click");
+
+      setTimeout(function () {
+        alert("锚点");
+        console.log("timeout");
+      }, 0);
+
+      Promise.resolve().then(function () {
+        console.log("promise");
+      });
+
+      outer.setAttribute("data-random", Math.random());
+      console.log(outer.getAttribute("data-random"))
+    }
+
+    // …which we'll attach to both elements
+    inner.addEventListener("click", onClick);
+    outer.addEventListener("click", onClick);
+  </script> -->
   <!-- <script>
     const input = document.getElementById('input')
 
@@ -44,7 +99,7 @@
     
   </script> -->
 
-  <script>
+  <!-- <script>
     const city = {
       areaMap: {
         "421101": "黄冈市市辖区",
@@ -3580,7 +3635,7 @@
     // function mat (parent, id) {
     //   // 市
     //   const arr = []
-      
+
     //   const a = id.substring(id.length, 4)
     //   const b = id.substring(0,2)
     //   for (const key in parent) {
@@ -3614,7 +3669,6 @@
     //   }
     //   return arr
     // }
-    
 
     // console.time('time')
     // function fomatCtiy(parent, id, type = 0) {
@@ -3652,27 +3706,26 @@
     // console.log(fomatCtiy(city.areaMap))
     // console.timeEnd('time')
 
-
     const Singleton = function (name) {
-      this.name = name
-    }
+      this.name = name;
+    };
 
     Singleton.prototype.getName = function () {
-      return this.name
-    }
+      return this.name;
+    };
     // 代理单利模式
     const ProxySingletonInstance = (function (name) {
-      let instance = null
+      let instance = null;
       return function (name) {
         if (!instance) {
-          instance = new Singleton(name)
+          instance = new Singleton(name);
         }
-        return instance
-      }
-    })()
-    const a = new ProxySingletonInstance('sven1')
-    const b = new ProxySingletonInstance('sven2')
-    
-    console.log(a === b)
-  </script>
+        return instance;
+      };
+    })();
+    const a = new ProxySingletonInstance("sven1");
+    const b = new ProxySingletonInstance("sven2");
+
+    console.log(a === b);
+  </script> -->
 </html>
