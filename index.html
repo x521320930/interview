@@ -1,28 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <style>
-      .inner {
-        position: relative;
-        z-index: -100000;
-      }
-    </style>
-  </head>
-  <body>
-    <div
-      class="outer"
-      style="width: 200px; height: 200px; background-color: #ccc;"
-    >
-      1
-      <div
-        class="inner"
-        style="width: 100px; height: 100px; background-color: #ddd;"
-      >
-        begin
-      </div>
+
+<head>
+  <style>
+    .inner {
+      position: relative;
+      z-index: -100000;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="outer" style="width: 200px; height: 200px; background-color: #ccc;">
+    1
+    <div class="inner" style="width: 100px; height: 100px; background-color: #ddd;">
+      begin
+
     </div>
-  </body>
-  <script>
+  </div>
+  <img src="D:\github\interview\d.png1">
+</body>
+<script>
+  // window.onerror = (msg, url, line, column, error) => {
+  //   console.log(msg)
+  //   console.log(url)
+  //   console.log(line)
+  //   console.log(column)
+  //   console.log(error)
+  // }
+
+  window.addEventListener('error', (msg, url, line, column, error) => {
+    console.log(msg)
+    console.log(url)
+    console.log(line)
+    console.log(column)
+    console.log(error)
+  }, true);
+</script>
+<script>
+  var a = 1
+  b
+</script>
+<!-- <script>
+    /*
+    * @param msg{String}：错误消息
+    * @param url{String}：发生错误页面的url
+    * @param line{Number}：发生错误的代码行
+    * @param column{Number}：发生错误的代码列
+    * @param error{string}: 错误信息
+    */
     var _0x112b = ["push", "join", "error", "columnNumber", "srcElement", "DOCUMENT_TYPE_NODE", "nodeName", "statusText", "ifReportHttpTimout", "number", "prototype", "getTime", "setHttpBody", "parse", "silentWebsocket", "message", "notify", "addEventListener", "apply", "href", "getAttribute", "notifierUrl", "call", "toStringTag", "__esModule", "unhandledrejection", "2.4.0", "metaData", "target", "atob", "setRequestHeader", "Content-Type", "Fundebug: 请配置apikey", "pop"];
     var _0x580e = function (e, t) {
       console.log(e -= 0)
@@ -31,9 +57,9 @@
     // _0x580e("0x3")
     var e = "0x3"
     console.log(_0x112b[ e - 0])
-  </script>
-  <!-- 检测事件循环 机制 -->
-  <!-- <script>
+  </script> -->
+<!-- 检测事件循环 机制 -->
+<!-- <script>
     var outer = document.querySelector(".outer");
     var inner = document.querySelector(".inner");
 
@@ -74,7 +100,7 @@
     inner.addEventListener("click", onClick);
     outer.addEventListener("click", onClick);
   </script> -->
-  <!-- <script>
+<!-- <script>
     const input = document.getElementById('input')
 
     input.addEventListener('input', deboune(sayHi))
@@ -106,7 +132,7 @@
     
   </script> -->
 
-  <!-- <script>
+<!-- <script>
     const city = {
       areaMap: {
         "421101": "黄冈市市辖区",
@@ -3735,4 +3761,5 @@
 
     console.log(a === b);
   </script> -->
+
 </html>
