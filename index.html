@@ -20,6 +20,14 @@
   </div>
   <img src="D:\github\interview\d.png1">
 </body>
+
+<script>
+  const a = '李思思'
+  let str = ''
+  for (let i = 0; i < a.length; i++) {
+     if (str) {}str += '*'
+  }
+</script>
 <script>
   // window.onerror = (msg, url, line, column, error) => {
   //   console.log(msg)
@@ -29,17 +37,82 @@
   //   console.log(error)
   // }
 
-  window.addEventListener('error', (msg, url, line, column, error) => {
-    console.log(msg)
-    console.log(url)
-    console.log(line)
-    console.log(column)
-    console.log(error)
-  }, true);
+  // window.addEventListener('error', (msg, url, line, column, error) => {
+  //   console.log(msg)
+  //   console.log(url)
+  //   console.log(line)
+  //   console.log(column)
+  //   console.log(error)
+  // }, true);
+  
+  // 第一题 考验正则与字符串的处理
+  // 我正则不好
+  // const str =  "i'm dehihide []?? beijing hidbdsk ?? dsjo"
+  // const reg = /[a-zA-Z]/g
+  // const reg1 = /\'/g
+  // const reg2 = /\s/g
+  // const str1 = ''
+  // for (let i = 0; i < str.length;i++) {
+  // }
+  
+  // 第二题 考验递归能力
+  // 初始化 从 开始
+  // const initNum = 0
+  // 范围限制
+  // const limits = 20
+  // 函数
+  // function fn (i, l) {
+  //   const n = 3
+  //   const total = n + i
+  //   if (total > l) {
+  //     return []
+  //   } else {
+  //     return [total].concat(fn(total, l))
+  //   }
+  // }
+  // 第三题
+  // 考验 设计模式中 发布订阅模式
+  // class Clock {
+  //   constructor () {
+  //     this.time = 1
+  //     this.activeList = []
+  //     this.isOpen = false
+  //     this.clearTime = ''
+  //   }
+
+  //   add (time, active) {
+  //     this.activeList.push({ time, active })
+  //   }
+
+  //   openClock () {
+  //     this.timeInterval()
+  //   }
+
+  //   closeClock () {
+  //     clearInterval(this.clearTime)
+  //   }
+
+  //   timeInterval () {
+  //     this.clearTime = setInterval(() => {
+  //       const hour = new Date().getHours()
+  //       console.log(hour)
+  //       for (let i = 0; i < this.activeList.length; i++) {
+  //         const data = this.activeList[i]
+  //         if (hour === data.time) {
+  //           data.active()
+  //         }
+  //       }
+  //     }, 1000)
+  //   }
+  // }
+  // const clock = new Clock()
+  // clock.openClock()
+  // clock.add(8, function () { console.log('起床')})
+  // clock.add(9, function () { console.log('刷牙')})
 </script>
 <script>
-  var a = 1
-  b
+  // var a = 1
+  // b
 </script>
 <!-- <script>
     /*
