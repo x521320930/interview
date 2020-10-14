@@ -24,7 +24,7 @@ package-lock.json*
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-
+*.zip
 # Misc
 .DS_Store
 

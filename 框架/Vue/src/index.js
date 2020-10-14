@@ -6,7 +6,7 @@ window.vm = new Vue({
     return {
       msg: '1',
       obj: { name: '1', age: 10 },
-      arr: [1, 2, 3]
+      arr: [1, 2, 3, {a:1 }]
     }
   },
   computed: {
@@ -16,4 +16,4 @@ window.vm = new Vue({
 
   }
 })
-console.log(vm)
+console.log(vm.arr.push({ a: 1  }), vm.arr)

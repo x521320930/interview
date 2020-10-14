@@ -1,7 +1,13 @@
 {
   "dependencies": {
     "animate.css": "^4.1.0",
+    "axios": "^0.20.0",
+    "cheerio": "^1.0.0-rc.3",
     "mint-ui": "^2.2.13",
+    "request": "^2.88.2",
     "vue": "^2.6.12"
+  },
+  "scripts": {
+    "dev": "node index.js"
   }
 }
