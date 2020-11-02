@@ -5,7 +5,11 @@ export function initMixin (Vue) {
     const vm = this
     vm.$options = options
     // MVVM 响应式原理
-    // data computed warch
-    initState(vm)
+    // 拦截数组方法，和 对象属性
+    initState(vm) // data computed warch
+  }
+
+  Vue.prototype._update = function (a) {
+    
   }
 }
