@@ -27,8 +27,7 @@ Ealge.prototype.resourceError = function () {
     const _this = this
     window.addEventListener && window.addEventListener('error', function (e) {
         try {
-        } catch (error) {
-        }
+        } catch (error) {}
     },true)
 }
 
@@ -51,7 +50,7 @@ Ealge.prototype.requestError = function () {
             const loadend = this.onloadend;
             this.onloadend = function () {
                 try {
-
+                    
                 } catch (error) {}
                 loadend && loadend.apply(this, arguments)
             }
@@ -59,6 +58,7 @@ Ealge.prototype.requestError = function () {
         send && send.apply(this, arguments)
     }
 }
+
 
 Ealge.prototype.terminal = function () {
     ['log', 'error', 'warn'].forEach(function (n) {
@@ -76,4 +76,8 @@ Ealge.prototype.send = function (data) {
     const url = this.url;
     const params = encodeURIComponent(data);
     (new Image).src = `${url}/n.gif?params=${params}`
+}
+
+Ealge.prototype.use = function (pa) {
+    pa.install && pa.install(this)
 }
