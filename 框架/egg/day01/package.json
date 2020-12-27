@@ -1,0 +1,23 @@
+{
+  "name": "eagle-script",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "bin": {
+    "egg-scripts": "bin/egg-scripts.js"
+  },
+  "scripts": {
+    "start": "node ./bin/egg-scripts start --daemon --title=egg-server-andromeda-egg-service"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "common-bin": "^2.9.0",
+    "runscript": "^1.5.0",
+    "zlogger": "^2.1.0"
+  },
+  "devDependencies": {},
+  "description": ""
+}
