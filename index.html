@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Vue事件处理</title>
+</head>
+
+<body>
+  <div id="demo">
+    <h1>v-for和v-if谁的优先级高？应该如何正确使用避免性能问题？</h1>
+    <!-- <p v-for="child in children" v-if="isFolder">{{child.title}}</p> -->
+    <template v-if="isFolder">
+      <p v-for="child in children">{{child.title}}</p>
+    </template>
+  </div>
+  <script src="../../dist/vue.js"></script>
+  <script>
+    // 创建实例
+    const app = new Vue({
+      el: '#demo',
+      data() { 
+        return { children: [{ title: 'foo' }, { title: 'bar' },] } 
+      }
+    })
+    console.log(app.$options.render); 
+  </script>
+</body>
+
+</html>

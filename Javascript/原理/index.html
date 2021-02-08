@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>call、apply、bind 实现原理</title>
+</head>
+
+<body>
+  <script>
+    function myCall(ctx, ...arg) {
+      // 先判断是否为空，如果为空 或 当前 ctx 指向 window
+      if (ctx === null || ctx === undefined) ctx = window
+      // 判断不是转换成对象  
+      if (typeof ctx !== 'object' || typeof ctx !== 'function') {
+        // 找到当前封装的类
+        ctx = new (ctx).constructor(ctx)
+      }
+      // ctx增加一个属性fn 并把this(当前调用的函数)赋给 fn
+      ctx.fn = this
+      // 执行改变this指向的函数
+      const res = ctx.fn(...arg)
+      // 删除掉新增的属性fn
+      delete ctx.fn
+      // 返回执行结果
+      return res
+    }
+    Function.prototype.myCall = myCall
+
+    function fn(a, b) {
+      console.log(this)
+      console.log(`a:${a}, b:${b}`)
+    }
+
+    fn.myCall({ a: 1, b: 2 }, 1, 2)
+    
+    function _call (ctx, ...args) {
+      if (ctx == null || ctx == undefined) ctx = window
+
+      if (typeof ctx !== 'object' && typeof ctx !== 'function') {
+        ctx = new (ctx).constructor(ctx)
+      }
+
+      ctx.fn = this
+
+      const result = ctx.fn(...args)
+      delete ctx.fn
+
+      return result
+    }
+
+    function _bind (ctx, ...args) {
+      const fn = this
+      return function () {
+        return fn.apply(ctx, [...args, ...arguments])
+      }
+    }
+
+    function _new (fn, ...args) {
+      const obj = {}
+      obj.__proto__ = fn.prototype
+      
+      const result = fn.apply(obj, ...args)
+
+      if (typeof result === 'object' || typeof result === 'function') return result
+      
+      return obj
+    }
+  </script>
+</body>
+
+</html>

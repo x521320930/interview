@@ -56,6 +56,7 @@ function getImageSuffix(fileBuffer) {
 
  const a = getImageSuffix(data)
  console.log(a)
+ 
 function axios() {
   return new Promise((reslove) => {
     setTimeout(() => reslove('成功'), 2000)
