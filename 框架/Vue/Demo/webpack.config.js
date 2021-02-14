@@ -10,6 +10,15 @@ module.exports = {
   resolve: {
     modules: [path.resolve(__dirname, 'source'), path.resolve(__dirname, 'node_modules')]
   },
+  mode: 'development',
+  module: {
+    rules: [
+      {
+        test: /\.vue$/,
+        use: 'vue-loader'
+      }
+    ]
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'public/index.html')
