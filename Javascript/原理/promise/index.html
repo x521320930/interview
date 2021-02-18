@@ -9,15 +9,47 @@
 </head>
 <body>
   <script>
-    const p = new Promise((resolve, reject) => {
-      // resolve('ok')
-      throw '失败了'
+    // const p = new Promise((resolve, reject) => {
+    //   // setTimeout(() => reject('失败了'), 1000)
+    //   // resolve('ok1')
+    //   // throw '失败了'
+    //   setTimeout(() => { resolve('好了') }, 1000)
+    //   // resolve(new Promi)
+    // })
+    // Promise.all([
+    //   p,
+    //   () => {
+    //     setTimeout(() => {console.log}, 1000)
+    //   },
+    //   new Promise((r) => {
+    //     r('好了1')
+    //   }),
+    //   new Promise((r) => {
+    //     r('好了2')
+    //   })
+    // ]).then((v) => {
+    //   console.log(v)
+    // })
+    // console.log(p)
+    // p.then((vl) => {
+    //   return vl
+    // }).finally(() => {
+    //   console.log(111)
+    // })
+    // .then((vl) => {
+    //   console.log(vl + '31')
+    // }, re => {
+    //   console.log(re, '=========')
+    // })
+    Promise.resolve()
+    .then(() => {
+      throw new Error('error!!!')
     })
-    console.log(p)
-    p.then((val) => {
-      console.log(val)
-    }, (e) => {
-      console.log(e)
+    .then((res) => {
+      console.log('then:1 ', res)
+    })
+    .catch((err) => {
+      console.log('catch: ', err)
     })
   </script>
 </body>
