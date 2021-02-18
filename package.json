@@ -2,7 +2,7 @@
   "dependencies": {
     "@sentry/browser": "^5.27.1",
     "animate.css": "^4.1.0",
-    "axios": "^0.20.0",
+    "axios": "^0.21.1",
     "cheerio": "^1.0.0-rc.3",
     "core-js": "^3.8.3",
     "fundebug-reactnative": "^0.1.1",
