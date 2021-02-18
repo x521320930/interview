@@ -4,6 +4,7 @@
     "animate.css": "^4.1.0",
     "axios": "^0.20.0",
     "cheerio": "^1.0.0-rc.3",
+    "core-js": "^3.8.3",
     "fundebug-reactnative": "^0.1.1",
     "mint-ui": "^2.2.13",
     "request": "^2.88.2",

@@ -27,7 +27,7 @@ package-lock.json*
 *.zip
 # Misc
 .DS_Store
-
+dist
 **/logs
 
 src/config.js

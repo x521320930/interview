@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>v-if和v-for哪个优先级更高？如果两个同时出现，应该怎么优化得到更好的性能？</title>
+  <script src="../node_modules/vue/dist/vue.js"></script>
+  <style>
+    div {
+      height: 100px;
+      line-height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div v-for="item in nums" v-if="true">{{item}}</div>
+      anonymous(
+      ) {
+      with(this){return _c('div',{attrs:{"id":"app"}},_l((nums),function(item){return (true)?_c('div',[_v(_s(item))]):_e()}),0)}
+      }
+  </div>
+
+  <script>
+    window.vm = new Vue({
+      el: '#app',
+      data: {
+        nums: 6
+      }
+    })
+    console.log(vm.$options.render)
+    
+  </script>
+</body>
+</html>

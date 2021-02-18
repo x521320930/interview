@@ -82,8 +82,31 @@ provide () {
 
 inject: [msg]
 ```
-#### 2. 组件化实战
+#### 2. v-if和v-for哪个优先级更高？如果两个同时出现，应该怎么优化得到更好的性能？
+两者同级时，渲染函数如下:
+```js
+(function anonymous( ) { with(this){return _c('div',{attrs:{"id":"demo"}},[_c('h1',[_v("v-for和v-if谁的优先 级高？应该如何正确使用避免性能问题？")]),_v(" "), _l((children),function(child){return (isFolder)?_c('p', [_v(_s(child.title))]):_e()})],2)} })
+```
+两者不同级时，渲染函数如下
+```js
+(function anonymous( ) { with(this){return _c('div',{attrs:{"id":"demo"}},[_c('h1',[_v("v-for和v-if谁的优先 级高？应该如何正确使用避免性能问题？")]),_v(" "), (isFolder)?_l((children),function(child){return _c('p', [_v(_s(child.title))])}):_e()],2)} })
+```
+源码中：
+```js
+if (el.staticRoot && !el.staticProcessed) {
+    return genStatic(el, state)
+  } else if (el.once && !el.onceProcessed) {
+    return genOnce(el, state)
+  } else if (el.for && !el.forProcessed) {
+    return genFor(el, state)
+  } else if (el.if && !el.ifProcessed) {
+    return genIf(el, state)
+  } else if (el.tag === 'template' && !el.slotTarget && !state.pre) {}
+```
+结论:
+ 1. v-for 优先级更高(源码中compiler/codegen/index) genElement方法
+ 2. 可以嵌套一层template在这一层 使用v-if 然后在内部进行v-for循环
 
-
- 
+#### 3. Vue组件data为什么必须是个函数而Vue的根实例则没有此限制？
+源码中找答案：src\core\instance\state.js - initData()
 
