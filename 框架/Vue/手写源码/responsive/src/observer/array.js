@@ -1,7 +1,8 @@
 
 // 如何做到数组拦截
 // 备份Array 原型
-import { def } from './utils'
+import { def } from '../utils'
+
 const arrayProto = Array.prototype
 
 export const arrayMethods = Object.create(arrayProto)

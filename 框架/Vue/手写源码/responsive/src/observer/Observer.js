@@ -1,4 +1,4 @@
-import { def } from './utils'
+import { def } from '../utils'
 import defineReactive from './defineReactive'
 import observe from './observe'
 import { arrayMethods } from './array'
