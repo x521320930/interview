@@ -1,4 +1,4 @@
-import Watcher from '../observer/Watcher'
+import Watcher from '../observer/watcher'
 import { initState } from './state'
 import { compilerText } from '../utils/index'
 
@@ -21,10 +21,9 @@ export function initMixin (Vue) {
     let el = vm.$options.el // 获取元素
     // 获取当前挂载节点 vm.$el就是我要挂载的一个元素
     el = vm.$el = query(el)
-
+    
     // 渲染师通过 Watcher 来渲染
     // vue2.0 组件级别更新 new vue 产生一个组件
-
     // 更新组件、渲染的逻辑
     let updateComponent = () => {
       // 更新组件
@@ -64,7 +63,6 @@ function query (el) {
 
 function compiler (node, vm) {
   let childNode = node.childNodes;
-
   [...childNode].forEach(child => {
     // nodeType = 1 元素
     if (child.nodeType == 1) {

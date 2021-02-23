@@ -1,4 +1,5 @@
 import { parsePath } from '../utils/index'
+import Dep, { pushTarget, popTarget } from './dep'
 let id = 0
 class Watcher {
   /**
@@ -8,7 +9,7 @@ class Watcher {
    * @param {*} cb 用户传入的回调函数
    * @param {*} opts 一些参数
    */
-  constructor (vm, exprOrFn, cb, opts) {
+  constructor (vm, exprOrFn, cb = () => {}, opts = {}) {
     this.vm = vm
     this.exprOrFn = exprOrFn
     if (typeof this.exprOrFn === 'function') {
@@ -19,13 +20,25 @@ class Watcher {
     }
     this.cb = cb
     this.opts = opts
-    this.id = id++
+    this.id = ++id
     this.get()
   }
 
   get () {
+    pushTarget(this)
     // 让当前的函数直接执行
     this.getter()
+    popTarget()
+  }
+  // 执行
+  run () {
+    // 让当前的函数直接执行
+    // 让当前的函数直接执行
+    this.getter()
+  }
+  // 更新
+  update () {
+    this.run()
   }
 }
 

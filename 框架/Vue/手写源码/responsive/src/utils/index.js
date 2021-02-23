@@ -19,9 +19,10 @@ export function compilerText (node, vm) {
   // + 知晓一个
   // ? 尽可能少匹配
   const defaultRE = /\{\{((?:.|\r?\n)+?)\}\}/g
-  node.textContent = node.textContent.replace(defaultRE, function (...args) {
+  const value = node.textContent.replace(defaultRE, function (...args) {
     return getValue(vm, args[1])
   })
+  node.textContent = value
 }
 
 export function getValue (vm, expr) {

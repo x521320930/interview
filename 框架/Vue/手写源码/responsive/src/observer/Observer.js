@@ -2,12 +2,12 @@ import { def } from '../utils'
 import defineReactive from './defineReactive'
 import observe from './observe'
 import { arrayMethods } from './array'
-
+import Dep from './dep'
 // 将一个正常的object转换为每个层级的属性都是响应式的
 export default class Observer {
   constructor (value) {
     // 存放值
-    this.value = value
+    this.dep = new Dep()
     // 把私有自定义属性__ob__
     // 设置不可枚举
     // 设置属性 指向自己的实例Observer
