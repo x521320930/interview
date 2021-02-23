@@ -1,4 +1,4 @@
-
+import { parsePath } from '../utils/index'
 let id = 0
 class Watcher {
   /**
@@ -11,12 +11,11 @@ class Watcher {
   constructor (vm, exprOrFn, cb, opts) {
     this.vm = vm
     this.exprOrFn = exprOrFn
-
     if (typeof this.exprOrFn === 'function') {
       // getter 就是 new watcher 传入的第二个函数
       this.getter = exprOrFn
     } else {
-      this.getter = parsePath(expOrFn)
+      this.getter = parsePath(exprOrFn)
     }
     this.cb = cb
     this.opts = opts
