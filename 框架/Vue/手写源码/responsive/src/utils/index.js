@@ -43,3 +43,5 @@ export function parsePath (path) {
     return obj
   }
 }
+
+export function noop (a, b, c) {}

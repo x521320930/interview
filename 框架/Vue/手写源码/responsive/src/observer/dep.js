@@ -41,6 +41,6 @@ export function pushTarget (target) {
 }
 
 export function popTarget () {
+  targetStack.pop()
   Dep.target = targetStack[targetStack.length - 1]
-  console.log(targetStack[targetStack.length - 1], 'popTarget')
 }
